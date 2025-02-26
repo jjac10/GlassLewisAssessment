@@ -1,9 +1,45 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35707.178 d17.12
+VisualStudioVersion = 17.12.35707.178
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlassLewisAssessment.domain", "GlassLewisAssessment.domain\GlassLewisAssessment.domain.csproj", "{5E89431C-748F-4352-9194-F2096E13191F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlassLewisAssessment.infrastructure", "GlassLewisAssessment.infrastructure\GlassLewisAssessment.infrastructure.csproj", "{4FAE3A0C-A801-4243-90EE-6DD413BA9C4F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlassLewisAssessment.application", "GlassLewisAssessment.application\GlassLewisAssessment.application.csproj", "{DAAA0E92-AFE0-4E75-BDE9-104ADE3E0A8D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlassLewisAssessment.api", "GlassLewisAssessment.api\GlassLewisAssessment.api.csproj", "{E2531FD3-8F0F-41BE-80B2-2ABC7E71AF07}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlassLewisAssessment.Tests", "GlassLewisAssessment.Tests\GlassLewisAssessment.Tests.csproj", "{0B5453E9-EAE8-459D-A76F-1593E1541988}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5E89431C-748F-4352-9194-F2096E13191F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E89431C-748F-4352-9194-F2096E13191F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E89431C-748F-4352-9194-F2096E13191F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E89431C-748F-4352-9194-F2096E13191F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4FAE3A0C-A801-4243-90EE-6DD413BA9C4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FAE3A0C-A801-4243-90EE-6DD413BA9C4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4FAE3A0C-A801-4243-90EE-6DD413BA9C4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FAE3A0C-A801-4243-90EE-6DD413BA9C4F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAAA0E92-AFE0-4E75-BDE9-104ADE3E0A8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAAA0E92-AFE0-4E75-BDE9-104ADE3E0A8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAAA0E92-AFE0-4E75-BDE9-104ADE3E0A8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAAA0E92-AFE0-4E75-BDE9-104ADE3E0A8D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2531FD3-8F0F-41BE-80B2-2ABC7E71AF07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2531FD3-8F0F-41BE-80B2-2ABC7E71AF07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2531FD3-8F0F-41BE-80B2-2ABC7E71AF07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2531FD3-8F0F-41BE-80B2-2ABC7E71AF07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B5453E9-EAE8-459D-A76F-1593E1541988}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B5453E9-EAE8-459D-A76F-1593E1541988}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B5453E9-EAE8-459D-A76F-1593E1541988}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B5453E9-EAE8-459D-A76F-1593E1541988}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection

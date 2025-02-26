@@ -1,0 +1,6 @@
+@GlassLewisAssessment.api_HostAddress = http://localhost:5243
+
+GET {{GlassLewisAssessment.api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
