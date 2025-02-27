@@ -8,6 +8,6 @@ namespace GlassLewisAssessment.domain.Interfaces
         Task<Company?> GetByIdAsync(int id);
         Task<Company?> GetByIsinAsync(string isin);
         Task<int> CreateAsync(Company company);
-        Task<int> UpdateAsync(Company company);
+        Task<int> UpdateAsync(int id, Company company);
     }
 }
