@@ -5,7 +5,7 @@ using MediatR;
 
 namespace GlassLewisAssessment.application.Commands.Handlers
 {
-    public class UpdateCompanyCommandHandler : IRequestHandler<UpdateCompanyCommnad, int>
+    public class UpdateCompanyCommandHandler : IRequestHandler<UpdateCompanyCommand, int>
     {
         private readonly ICompanyRepository _companyRepository;
         private readonly IMapper _mapper;
@@ -16,7 +16,7 @@ namespace GlassLewisAssessment.application.Commands.Handlers
             _mapper = mapper;
         }
 
-        public async Task<int> Handle(UpdateCompanyCommnad request, CancellationToken cancellationToken)
+        public async Task<int> Handle(UpdateCompanyCommand request, CancellationToken cancellationToken)
         {
             return await _companyRepository.UpdateAsync(request.Id, _mapper.Map<Company>(request.Company));
         }

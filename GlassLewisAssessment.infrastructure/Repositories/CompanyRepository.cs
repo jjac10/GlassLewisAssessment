@@ -28,6 +28,9 @@ namespace GlassLewisAssessment.infrastructure.Repositories
         public async Task<int> CreateAsync(Company company)
         {
             if (company == null) throw new ArgumentNullException(nameof(company));
+            if (!Company.IsIsinValid(company.Isin)) throw new InvalidOperationException("Invalid Isin format.");
+
+            if (await ExistAsync(company.Isin)) throw new InvalidOperationException("The Isin is already taken.");
 
             _context.Companies.Add(company);
             await _context.SaveChangesAsync();
@@ -41,6 +44,12 @@ namespace GlassLewisAssessment.infrastructure.Repositories
             var exist = await GetByIdAsync(id);
             if (exist == null) throw new KeyNotFoundException("Company not found.");
 
+            if (exist.Isin != company.Isin)
+            {
+                if (await ExistAsync(company.Isin)) throw new InvalidOperationException("The Isin is already taken.");
+                if (!Company.IsIsinValid(company.Isin)) throw new InvalidOperationException("Invalid Isin format.");
+            }
+
             exist.Name = company.Name;
             exist.Exchange = company.Exchange;
             exist.Ticker = company.Ticker;
@@ -49,6 +58,11 @@ namespace GlassLewisAssessment.infrastructure.Repositories
 
             await _context.SaveChangesAsync();
             return exist.Id;
+        }
+
+        private async Task<bool> ExistAsync(string isin)
+        {
+            return await _context.Companies.AsNoTracking().AnyAsync(c => c.Isin == isin);
         }
     }
 }
