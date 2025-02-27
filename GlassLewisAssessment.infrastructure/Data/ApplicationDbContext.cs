@@ -5,6 +5,8 @@ namespace GlassLewisAssessment.infrastructure.Data
 {
     public class ApplicationDbContext : DbContext, IApplicationDbContext
     {
+        public ApplicationDbContext(DbContextOptions options) : base(options) { }
+
         public DbSet<Company> Companies { get; set; }
 
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
@@ -12,17 +14,12 @@ namespace GlassLewisAssessment.infrastructure.Data
             return base.SaveChangesAsync(cancellationToken);
         }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlite($"Data Source=CompanyDB.sqlite");
-        }
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Company>()
                 .HasIndex(c => c.Isin)
                 .HasDatabaseName("IDX_Company_Isin")
-                .IsUnique();
+                .IsUnique();            
         }
     }
 }
